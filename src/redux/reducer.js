@@ -64,3 +64,14 @@ export const getVisibleTodosSelector = createSelector(
         }
     }
 );
+
+export const statsSelector = createSelector(
+    getTodosSelector, 
+    (todos) => {
+        const completed = todos.filter(todo => todo.complete).length;
+        return {
+            completed,
+            active: todos.length - completed
+        }
+    }
+);

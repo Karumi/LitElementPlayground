@@ -8,8 +8,9 @@ import { VisibilityFilters, getVisibleTodosSelector } from '../redux/reducer.js'
 import { store } from '../redux/store.js'
 import { connect } from 'pwa-helpers';
 import { addTodo, updateTodoStatus, updateFilter, clearCompleted } from '../redux/actions.js';
+import { BaseView } from './base-view.js';
 
-class TodoView extends connect(store)(LitElement) {
+class TodoView extends connect(store)(BaseView) {
 
     static get properties() {
         return {
@@ -125,10 +126,6 @@ class TodoView extends connect(store)(LitElement) {
 
     notExist(task) {
         return this.todos.filter(todo => todo.task === this.task).length == 0
-    }
-
-    createRenderRoot() {
-        return this;
     }
 }
 
