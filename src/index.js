@@ -4,6 +4,7 @@ import {Router} from '@vaadin/router';
 
 window.addEventListener('load', () => {
     initRouter();
+    registerServiceWorker();
 });
 
 function initRouter() {
@@ -26,4 +27,17 @@ function initRouter() {
           import(/* webpackChunkName: "not-found-view" */ './views/not-found-view')
       }
     ]);
+  }
+
+  async function registerServiceWorker() {
+    if ('serviceWorker' in navigator) { 
+      try {
+        await navigator.serviceWorker.register('./sw.js'); 
+        console.log('Registered SW');
+      } catch (e) {
+        console.log('ServiceWorker registration failed. Sorry about that.', e);
+      }
+    } else {
+      console.log('Your browser does not support ServiceWorker.');
+    }
   }
