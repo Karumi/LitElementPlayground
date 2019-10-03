@@ -32,7 +32,8 @@ const assets = [
   {
     from: 'src/img',
     to: 'img/'
-  }
+  },
+  'src/manifest.webmanifest'
 ];
 
 const plugins = [
