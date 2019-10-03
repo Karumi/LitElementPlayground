@@ -5,9 +5,9 @@ Playground used to learn and experiment with [Lit Element](https://lit-element.p
 
 Here is the content of the tutorial series:
 
-1. [Creating a LitElement project](https://vaadin.com/tutorials/lit-element/starting-a-lit-element-project) [#1](https://github.com/Karumi/LitElementPlayground/pull/1)
-2. [LitElement templating, properties, and events](https://vaadin.com/tutorials/lit-element/lit-element-templating-properties-and-events) [#2](https://github.com/Karumi/LitElementPlayground/pull/2)
-3. [Using Redux in a LitElement app](https://vaadin.com/tutorials/lit-element/state-management-with-redux)
+1. [Creating a LitElement project](https://vaadin.com/tutorials/lit-element/starting-a-lit-element-project) PR [#1](https://github.com/Karumi/LitElementPlayground/pull/1)
+2. [LitElement templating, properties, and events](https://vaadin.com/tutorials/lit-element/lit-element-templating-properties-and-events) PR [#2](https://github.com/Karumi/LitElementPlayground/pull/2)
+3. [Using Redux in a LitElement app](https://vaadin.com/tutorials/lit-element/state-management-with-redux) PR [#3](https://github.com/Karumi/LitElementPlayground/pull/3)
 4. [Navigation and code splitting in a LitElement project](https://vaadin.com/tutorials/lit-element/navigation-and-code-splitting)
 5. [PWA and offline](https://vaadin.com/tutorials/lit-element/pwa-and-offline)
 
