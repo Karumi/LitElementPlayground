@@ -41,7 +41,9 @@
   },
   "dependencies": {
     "@polymer/lit-element": "^0.7.1",
+    "@vaadin/router": "^1.4.3",
     "@vaadin/vaadin-button": "^2.2.1",
+    "@vaadin/vaadin-charts": "^6.2.3",
     "@vaadin/vaadin-checkbox": "^2.2.10",
     "@vaadin/vaadin-radio-button": "^1.2.3",
     "@vaadin/vaadin-text-field": "^2.4.12",
