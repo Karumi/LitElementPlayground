@@ -1,4 +1,5 @@
 # LitElementPlayground
+
 Playground used to learn and experiment with [Lit Element](https://lit-element.polymer-project.org/) and Web development. This repository contains the exercises of tutorial series "[How to build apps with LitElement and redux tutorial](https://vaadin.com/tutorials/lit-element)".
 
 ![](https://vaadin.com/static/content/learning-center/tutorials/lit-element/images/lit-element-thumbnail.png)
@@ -22,9 +23,7 @@ This application works offline then you need to run also the service worker addi
 
 Open `localhost:8080` page on your browser.
 
-
-License
--------
+## License
 
     Copyright 2019 Karumi
 

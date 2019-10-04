@@ -1,6 +1,7 @@
 ### :pushpin: References
-* **Issue:** _your issue goes here_
-* **Related pull-requests:** _list of related pull-requests (comma-separated): #1, #2_
+
+- **Issue:** _your issue goes here_
+- **Related pull-requests:** _list of related pull-requests (comma-separated): #1, #2_
 
 ### :tophat: What is the goal?
 
