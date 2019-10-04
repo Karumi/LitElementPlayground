@@ -1,5 +1,4 @@
-Contributing
-============
+# Contributing
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
@@ -10,18 +9,16 @@ When submitting code, please make every effort to follow existing conventions
 and style in order to keep the code as readable as possible. Please also make
 sure your code compiles, passes the tests and the checkstyle configured for this repository.
 
-
 Some tips that will help you to contribute to this repository:
 
-* Write clean code and test it.
-* Follow the repository code style.
-* Write good commit messages.
-* Do not send pull requests without checking if the project build is OK in Travis-CI.
-* Review if your changes affects the repository documentation and update it.
-* Describe the PR content and don't hesitate to add comments to explain us why you've added or changed something.
+- Write clean code and test it.
+- Follow the repository code style.
+- Write good commit messages.
+- Do not send pull requests without checking if the project build is OK in Travis-CI.
+- Review if your changes affects the repository documentation and update it.
+- Describe the PR content and don't hesitate to add comments to explain us why you've added or changed something.
 
-Code of conduct
----------------
+## Code of conduct
 
 As contributors and maintainers of this project, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities.
 

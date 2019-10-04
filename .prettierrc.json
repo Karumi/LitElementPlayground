@@ -1,0 +1,12 @@
+{
+  "singleQuote": true,
+  "quoteProps": "consistent",
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 120
+      }
+    }
+  ]
+}

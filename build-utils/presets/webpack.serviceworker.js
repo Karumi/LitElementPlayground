@@ -1,8 +1,8 @@
-const WorkboxPlugin = require('workbox-webpack-plugin');
+import { InjectManifest } from 'workbox-webpack-plugin';
 
-module.exports = () => ({
+export default () => ({
   plugins: [
-    new WorkboxPlugin.InjectManifest({
+    new InjectManifest({
       swSrc: './src/sw.js'
     })
   ]
