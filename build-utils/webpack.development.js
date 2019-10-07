@@ -1,6 +1,6 @@
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-export default () => ({
+module.exports = () => ({
   module: {
     rules: [
       {

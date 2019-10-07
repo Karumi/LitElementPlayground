@@ -69,7 +69,7 @@ class TodoView extends connect(store)(BaseView) {
 
       <div class="todos-list">
         ${this.todos.map(
-      todo => html`
+          todo => html`
             <div class="todo-item">
               <vaadin-checkbox
                 ?checked="${todo.complete}"
@@ -79,7 +79,7 @@ class TodoView extends connect(store)(BaseView) {
               </vaadin-checkbox>
             </div>
           `
-    )}
+        )}
       </div>
 
       <vaadin-radio-group
@@ -88,12 +88,12 @@ class TodoView extends connect(store)(BaseView) {
         @value-changed="${this.filterChanged}"
       >
         ${Object.values(VisibilityFilters).map(
-      filter => html`
+          filter => html`
             <vaadin-radio-button value="${filter}"
               >${filter}</vaadin-radio-button
             >
           `
-    )}
+        )}
       </vaadin-radio-group>
 
       <vaadin-button theme="secondary" @click="${this.clearCompleted}">

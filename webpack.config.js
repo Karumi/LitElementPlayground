@@ -1,12 +1,12 @@
-import { ProgressPlugin } from 'webpack';
-import { resolve } from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import webpackMerge from 'webpack-merge';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
+const webpack = require('webpack');
+const { resolve } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpackMerge = require('webpack-merge');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 /*global require */
 const modeConfig = env => require(`./build-utils/webpack.${env.mode}.js`)(env);
-import loadPresets from './build-utils/loadPresets';
+const loadPresets = require('./build-utils/loadPresets');
 
 const webcomponentsjs = './node_modules/@webcomponents/webcomponentsjs';
 
@@ -38,7 +38,7 @@ const assets = [
 
 const plugins = [
   new CleanWebpackPlugin(['dist']),
-  new ProgressPlugin(),
+  new webpack.ProgressPlugin(),
   new HtmlWebpackPlugin({
     filename: 'index.html',
     template: './src/index.html',
@@ -53,7 +53,7 @@ const plugins = [
   })
 ];
 
-export default ({ mode, presets }) => {
+module.exports = ({ mode, presets }) => {
   return webpackMerge(
     {
       mode,

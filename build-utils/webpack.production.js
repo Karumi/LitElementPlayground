@@ -1,11 +1,11 @@
-import MiniCssExtractPlugin, { loader } from 'mini-css-extract-plugin';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-export default () => ({
+module.exports = () => ({
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [loader, 'css-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       }
     ]
   },
