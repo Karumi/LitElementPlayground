@@ -2,8 +2,8 @@ import { BaseView } from './base-view.js';
 import { connect } from 'pwa-helpers';
 import { store } from '../redux/store.js';
 import { statsSelector } from '../redux/reducer.js';
-import '@vaadin/vaadin-charts';
 import { html } from '@polymer/lit-element';
+import Chart from 'chart.js';
 
 class StatsView extends connect(store)(BaseView) {
   static get properties() {
@@ -15,10 +15,25 @@ class StatsView extends connect(store)(BaseView) {
 
   stateChanged(state) {
     const stats = statsSelector(state);
-    this.chartConfig = [
-      { name: 'Completed', y: stats.completed },
-      { name: 'Active', y: stats.active }
-    ];
+    this.chartConfig = {
+      datasets: [{
+        data: [stats.completed, stats.active],
+        backgroundColor: [
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 99, 132, 0.2)'
+        ],
+        borderColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255,99,132,1)'
+        ],
+        borderWidth: 2,
+        borderAlign: 'center'
+      }],
+      labels: [
+        'Completed',
+        'Active'
+      ]
+    };
 
     this.hasTodos = state.todos.length > 0;
   }
@@ -35,13 +50,22 @@ class StatsView extends connect(store)(BaseView) {
     `;
   }
 
+  firstUpdated() {
+    if (this.hasTodos) {
+      const ctx = this.renderRoot.querySelector('#pie-chart').getContext('2d');
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: this.chartConfig
+      });
+    }
+  }
+
   getChart() {
     if (this.hasTodos) {
       return html`
-        <vaadin-chart type="pie">
-          <vaadin-chart-series .values="${this.chartConfig}">
-          </vaadin-chart-series>
-        </vaadin-chart>
+        <div>
+          <canvas id="pie-chart"></canvas>
+        </div>
       `;
     } else {
       return html`
