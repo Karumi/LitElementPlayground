@@ -2,7 +2,6 @@ import { BaseView } from './base-view.js';
 import { connect } from 'pwa-helpers';
 import { store } from '../redux/store.js';
 import { statsSelector } from '../redux/reducer.js';
-import '@vaadin/vaadin-charts';
 import { html } from '@polymer/lit-element';
 
 class StatsView extends connect(store)(BaseView) {
