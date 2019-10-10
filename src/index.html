@@ -1,37 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Todo</title>
 
-    <link rel="icon" type="image/png" href="./img/icons/favicon.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Todo</title>
 
-    <meta name="theme-color" content="#2A3443" />
-    <meta name="description" content="Tutorial app." />
+  <link rel="icon" type="image/png" href="./img/icons/favicon.ico" />
 
-    <!-- iOS -->
-    <link rel="apple-touch-icon" href="./img/icons/icon-144x144.png" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-status-bar-style" content="black" />
-    <meta name="mobile-web-app-title" content="TutorialApp" />
-    <link rel="manifest" href="./manifest.webmanifest" />
-    
-    <script>
-      if (!window.customElements) {
-        document.write('<!--');
-      }
-    </script>
-    <script src="./vendor/custom-elements-es5-adapter.js"></script>
-    <!-- ! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
-  </head>
+  <meta name="theme-color" content="#2A3443" />
+  <meta name="description" content="Tutorial app." />
 
-  <body>
-    <header><h1>Todo app</h1></header>
-    <nav><a href="/">Todos</a> <a href="/stats">Stats</a></nav>
+  <!-- iOS -->
+  <link rel="apple-touch-icon" href="./img/icons/icon.png" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-status-bar-style" content="black" />
+  <meta name="mobile-web-app-title" content="TutorialApp" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script>
+    if (!window.customElements) {
+      document.write('<!--');
+    }
+  </script>
+  <script src="./vendor/custom-elements-es5-adapter.js"></script>
+  <!-- ! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+  <style>
+    a #navbar-item:hover {
+      background-color: transparent;
+    }
+  </style>
+</head>
 
-    <main></main>
-    <script src="./vendor/webcomponents-loader.js"></script>
-  </body>
+<body>
+  <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+    <a href="https://karumi.com">
+      <img src="./img/logo.png" alt="Karumi" width="112" height="28">
+    </a>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="/">
+          Todos
+        </a>
+        <a class="navbar-item" href="/stats">
+          Stats
+        </a>
+        <a class="bd-navbar-icon navbar-item" href="https://github.com/karumi/LitElementPlayground" target="_blank">
+          <span class="icon" style="color: #ffffff;">
+            <svg class="svg-inline--fa fa-github-alt fa-w-15 fa-lg" aria-hidden="true" data-prefix="fab"
+              data-icon="github-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"
+              data-fa-i2svg="">
+              <path fill="currentColor"
+                d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z">
+              </path>
+            </svg><!-- <i class="fab fa-lg fa-github-alt"></i> -->
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main></main>
+  <script src="./vendor/webcomponents-loader.js"></script>
+</body>
+
 </html>
