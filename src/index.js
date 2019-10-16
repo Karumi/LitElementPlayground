@@ -1,6 +1,8 @@
 import './styles.css';
 import './views/todo-view.js';
+import './views/header-view.js';
 import { Router } from '@vaadin/router';
+import { store } from './redux/store.js';
 
 window.addEventListener('load', () => {
   initRouter();
@@ -41,4 +43,10 @@ async function registerServiceWorker() {
   } else {
     console.log('Your browser does not support ServiceWorker.');
   }
+}
+
+// expose store when run in Cypress
+if (window.Cypress) {
+  console.log("Set Cypress store");
+  window.store = store;
 }

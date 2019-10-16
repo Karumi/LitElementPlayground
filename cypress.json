@@ -1,0 +1,7 @@
+{
+    "baseUrl": "http://localhost:8080",
+    "waitForAnimations": true,
+    "chromeWebSecurity": false,
+    "viewportWidth": 1000,
+    "viewportHeight": 660
+}

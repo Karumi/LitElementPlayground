@@ -96,7 +96,7 @@ class TodoView extends connect(store)(BaseView) {
     )}
       </vaadin-radio-group>
 
-      <vaadin-button theme="secondary" @click="${this.clearCompleted}">
+      <vaadin-button id="clear-completed" theme="secondary" @click="${this.clearCompleted}">
         Clear completed
       </vaadin-button>
     `;
