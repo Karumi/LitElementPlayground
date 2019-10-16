@@ -24,7 +24,7 @@ describe('Todo view', () => {
             });
     });
 
-    it('add consecutive todos', () => {
+    it.only('add consecutive todos', () => {
         const firstTask = 'Task 1';
         const secondTask = 'Task 2';
 
@@ -37,6 +37,7 @@ describe('Todo view', () => {
         cy.getTodos()
             .should('have.length', 2)
             .should((todos) => {
+                console.log(todos);
                 expect(todos[0].task).to.equal(firstTask);
                 expect(todos[0].complete).to.equal(false);
 

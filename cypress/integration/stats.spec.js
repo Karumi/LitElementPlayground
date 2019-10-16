@@ -1,8 +1,11 @@
 import { createTodo } from '../support/commands';
 
 describe('Stats view', () => {
-  it('navigate to stats without todos', () => {
+  beforeEach(() => {
     cy.visit('/');
+  });
+
+  it('navigate to stats without todos', () => {
 
     cy.contains('Stats')
       .should('have.attr', 'href', '/stats').click();
@@ -12,7 +15,6 @@ describe('Stats view', () => {
   });
 
   it('show all active task chart', () => {
-    cy.visit('/');
     cy.addTodo(createTodo("task1"));
     cy.addTodo(createTodo("task2"));
 
@@ -21,7 +23,6 @@ describe('Stats view', () => {
   });
 
   it('show all complete task chart', () => {
-    cy.visit('/');
     cy.addTodo(createTodo("task1", true));
     cy.addTodo(createTodo("task2", true));
 
@@ -30,7 +31,6 @@ describe('Stats view', () => {
   });
 
   it('show all complete half tasks', () => {
-    cy.visit('/');
     cy.addTodo(createTodo("task1", true));
     cy.addTodo(createTodo("task2"));
 
