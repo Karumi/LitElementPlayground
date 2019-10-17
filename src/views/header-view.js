@@ -2,8 +2,8 @@ import { BaseView } from './base-view';
 import { html } from '@polymer/lit-element';
 
 class HeaderView extends BaseView {
-    render() {
-        return html`
+  render() {
+    return html`
       <nav class="navbar is-dark is-spaced" role="navigation" aria-label="main navigation">      
             <div class="navbar-brand">            
             <a class="navbar-item" href="https://karumi.com">
@@ -47,7 +47,7 @@ class HeaderView extends BaseView {
           </div>                    
       </nav>
     `;
-    }
+  }
 }
 
 customElements.define('header-view', HeaderView);

@@ -1,3 +1,4 @@
 dist/
 build-utils/
 webpack.config.js
+cypress/
