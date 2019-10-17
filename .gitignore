@@ -2,6 +2,7 @@ node_modules
 dist
 .cache
 .vs
-cypress/screenshots
-cypress/videos
+cypress/screenshots/
+cypress/videos/
 cypress/.snapshot-report
+**/__diff_output__/
