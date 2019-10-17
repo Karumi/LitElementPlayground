@@ -28,6 +28,6 @@ jobs:
     - name: Run Cypress tests
       uses: bartlett705/npm-cy@master
       with:
-        args: run test
+        args: cypress install && run test
       env:
         CI: true
