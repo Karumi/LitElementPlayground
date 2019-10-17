@@ -16,20 +16,18 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-       
-    - name: Install cypress
-      uses: bartlett705/npm-cy@master
-      with:
-        args: install cypress
-      env:
-        CI: true
-        
-    - name: npm install, build, and test
+        node-version: ${{ matrix.node-version }}               
+    - name: npm install and build
       run: |
         npm ci
         npm run lint
         npm run prod
-        npm run test
+      env:
+        CI: true
+      
+    - name: Run Cypress tests
+      uses: bartlett705/npm-cy@master
+      with:
+        args: run test
       env:
         CI: true
