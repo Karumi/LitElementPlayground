@@ -1,0 +1,35 @@
+name: Lint and tests
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+       
+    - name: Install cypress
+      uses: bartlett705/npm-cy@master
+      with:
+        args: install cypress
+      env:
+        CI: true
+        
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run lint
+        npm run prod
+        npm run test
+      env:
+        CI: true
