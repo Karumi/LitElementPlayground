@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Todo</title>
+    <link rel="icon" type="image/png" href="./img/icons/favicon.ico" />
 
-  <link rel="icon" type="image/png" href="./img/icons/favicon.ico" />
+    <meta name="theme-color" content="#2A3443" />
+    <meta name="description" content="Tutorial app." />
 
-  <meta name="theme-color" content="#2A3443" />
-  <meta name="description" content="Tutorial app." />
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="./img/icons/icon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-title" content="TutorialApp" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script>
+      if (!window.customElements) {
+        document.write('<!--');
+      }
+    </script>
+    <script src="./vendor/custom-elements-es5-adapter.js"></script>
+    <!-- ! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+  </head>
 
-  <!-- iOS -->
-  <link rel="apple-touch-icon" href="./img/icons/icon.png" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="mobile-web-app-status-bar-style" content="black" />
-  <meta name="mobile-web-app-title" content="TutorialApp" />
-  <link rel="manifest" href="./manifest.webmanifest" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
-  <script>
-    if (!window.customElements) {
-      document.write('<!--');
-    }
-  </script>
-  <script src="./vendor/custom-elements-es5-adapter.js"></script>
-  <!-- ! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
-</head>
-
-<body>
-  <header-view></header-view>
-  <main>
-  </main>
-  <script src="./vendor/webcomponents-loader.js"></script>
-</body>
-
+  <body>
+    <header-view></header-view>
+    <main></main>
+    <script src="./vendor/webcomponents-loader.js"></script>
+  </body>
 </html>

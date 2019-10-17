@@ -2,6 +2,7 @@
   "baseUrl": "http://localhost:9000",
   "waitForAnimations": true,
   "chromeWebSecurity": false,
-  "viewportWidth": 1000,
-  "viewportHeight": 660
+  "viewportWidth": 1280,
+  "viewportHeight": 1024,
+  "projectId": "144fs5"
 }

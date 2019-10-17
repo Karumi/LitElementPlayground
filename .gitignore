@@ -4,5 +4,6 @@ dist
 .vs
 cypress/screenshots/
 cypress/videos/
+cypress/snapshots/All\ Spects/
 cypress/.snapshot-report
 **/__diff_output__/

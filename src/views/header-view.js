@@ -8,13 +8,13 @@ class HeaderView extends BaseView {
             <div class="navbar-brand">            
             <a class="navbar-item" href="https://karumi.com">
                 <img src="./img/logo.png" alt="Karumi" height="28">
-            </a>
-            <a class="navbar-item is-hidden-desktop" href="/">
+            </a>      
+            <a class="navbar-item" href="/">
                         Todos
                     </a>
-                    <a class="navbar-item is-hidden-desktop" href="/stats">
+                    <a class="navbar-item" href="/stats">
                         Stats
-                    </a>
+                    </a>      
             <div class="navbar-item is-hidden-desktop">
                         <a class="navbar-icon button is-small" href="https://github.com/karumi/LitElementPlayground">
                             <span class="icon is-small">
@@ -24,15 +24,7 @@ class HeaderView extends BaseView {
                         </a>
             </div>           
           </div>            
-            <div class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" href="/">
-                        Todos
-                    </a>
-                    <a class="navbar-item" href="/stats">
-                        Stats
-                    </a>
-                </div>
+            <div class="navbar-menu">                
                 <div class="navbar-end">            
                     <div class="navbar-item">
                         <a class="navbar-icon button is-small" href="https://github.com/karumi/LitElementPlayground">

@@ -4,7 +4,6 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -12,24 +11,26 @@ jobs:
         node-version: [10.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-       
-    - name: Install cypress
-      uses: bartlett705/npm-cy@master
-      with:
-        args: install cypress
-      env:
-        CI: true
-        
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run lint
-        npm run prod
-        npm run test
-      env:
-        CI: true
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install and build
+        run: |
+          npm ci
+          npm run lint
+          npm run prod
+
+      - name: Install Cypress
+        uses: bartlett705/npm-cy@master
+        with:
+          args: install cypress
+
+      - name: Run Tests
+        uses: bartlett705/npm-cy@master
+        with:
+          args: run test
+        env:
+          CYPRESS_video: false
+          CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
