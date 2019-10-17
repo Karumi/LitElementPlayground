@@ -24,7 +24,7 @@ describe('Todo view', () => {
             });
     });
 
-    it.only('add consecutive todos', () => {
+    it('add consecutive todos', () => {
         const firstTask = 'Task 1';
         const secondTask = 'Task 2';
 
@@ -34,15 +34,17 @@ describe('Todo view', () => {
         cy.contains(firstTask).should('not.have.attr', 'checked');
         cy.contains(secondTask).should('not.have.attr', 'checked');
 
-        cy.getTodos()
-            .should('have.length', 2)
-            .should((todos) => {
-                console.log(todos);
-                expect(todos[0].task).to.equal(firstTask);
-                expect(todos[0].complete).to.equal(false);
+        cy.window()
+            .its('store')
+            .invoke('getState')
+            .should((state) => {
+                const firstTodo = state.todos[0]
+                expect(firstTodo.task).to.equal(firstTask);
+                expect(firstTodo.complete).to.equal(false);
 
-                expect(todos[1].task).to.equal(secondTask);
-                expect(todos[1].complete).to.equal(false);
+                const secondTodo = state.todos[1]
+                expect(secondTodo.task).to.equal(secondTask);
+                expect(secondTodo.complete).to.equal(false);
             });
     });
 

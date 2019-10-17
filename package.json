@@ -16,8 +16,8 @@
   "scripts": {
     "bundle-size-check": "bundlesize",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run --reporter cypress-image-snapshot/reporter",
-    "cypress:update": "cypress run --env updateSnapshots=true",
+    "cypress:run": "cypress run --browser chrome --reporter cypress-image-snapshot/reporter",
+    "cypress:update": "cypress run  --browser chrome --env updateSnapshots=true",
     "dev": "npm run webpack-dev-server -- --env.mode development",
     "dev:sw": "npm run webpack-dev-server -- --env.mode development  --env.presets serviceworker",
     "format": "npm run format:prettier",
