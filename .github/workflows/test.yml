@@ -32,3 +32,5 @@ jobs:
       uses: bartlett705/npm-cy@master
       with:
         args: run test
+      env:
+        CYPRESS_video: false
