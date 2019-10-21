@@ -27,7 +27,6 @@
     "lint:eslint": "eslint \"**/*.{js,ts}\"",
     "lint:lit": "lit-analyzer \"src/{views}/**/*.ts\" --strict --quiet",
     "prod": "npm run webpack -- --env.mode production --env.presets serviceworker",
-    "test": "node server.js & npm run cypress:run",
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server --history-api-fallback",
     "xvfb": "node ./cypress/scripts/xvfbargs.js"
