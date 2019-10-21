@@ -3,7 +3,7 @@ name: Lint and tests
 on: [push, pull_request]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -12,16 +12,24 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Install npm dependencies
+        uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: npm install and build
-        run: |
-          npm ci
-          node cypress/scripts/xvfbargs          
-          npm run lint
-          npm run prod
+          args: install
+      - name: Execute Xvfb arguments
+        uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+        with:
+          args: xvfb
+
+      - name: Execute Lint
+        uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+        with:
+          args: lint
+
+      - name: Build
+        uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+        with:
+          args: prod
 
       - name: Run Tests
         uses: bartlett705/npm-cy@master

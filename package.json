@@ -29,7 +29,8 @@
     "prod": "npm run webpack -- --env.mode production --env.presets serviceworker",
     "test": "node server & npm run cypress:run",
     "webpack": "webpack",
-    "webpack-dev-server": "webpack-dev-server --history-api-fallback"
+    "webpack-dev-server": "webpack-dev-server --history-api-fallback",
+    "xvfb": "node cypress/scripts/xvfbargs"
   },
   "keywords": [],
   "dependencies": {
