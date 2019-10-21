@@ -23,4 +23,4 @@ before_script:
 
 script:
   - npm run lint
-  - npm run cypress:run --record -key RECORD_KEY
+  - npm run cypress:run --record -key $RECORD_KEY
