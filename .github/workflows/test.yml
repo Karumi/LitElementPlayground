@@ -22,11 +22,6 @@ jobs:
           npm run lint
           npm run prod
 
-      - name: Install Cypress
-        uses: bartlett705/npm-cy@master
-        with:
-          args: install cypress
-
       - name: Run Tests
         uses: bartlett705/npm-cy@master
         with:

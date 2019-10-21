@@ -1,0 +1,75 @@
+<!--
+@license
+Copyright (c) 2018 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>metadata</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/wct-mocha/wct-mocha.js"></script>
+  </head>
+  <body>
+    <script type="module">
+      import { setMetaTag, updateMetadata } from '../metadata.js';
+
+      function getMetaContent(attrName, attrValue) {
+        const meta = document.head.querySelector(`meta[${attrName}="${attrValue}"]`);
+        return meta ? meta.getAttribute('content') : null;
+      }
+
+      suite('metadata tests', () => {
+        test('update title', () => {
+          const title = 'SOME_TITLE';
+          updateMetadata({title});
+          assert.equal(document.title, title);
+          assert.equal(getMetaContent('property', 'og:title'), title);
+          assert.equal(getMetaContent('property', 'og:url'), window.location.href);
+        });
+
+        test('update description', () => {
+          const description = 'SOME_DESCRIPTION';
+          updateMetadata({description});
+          assert.equal(getMetaContent('name', 'description'), description);
+          assert.equal(getMetaContent('property', 'og:description'), description);
+          assert.equal(getMetaContent('property', 'og:url'), window.location.href);
+        });
+
+        test('update image', () => {
+          const image = 'SOME_IMAGE';
+          updateMetadata({image});
+          assert.equal(getMetaContent('property', 'og:image'), image);
+          assert.equal(getMetaContent('property', 'og:url'), window.location.href);
+        });
+
+        test('update imageAlt', () => {
+          const imageAlt = 'SOME_IMAGE_ALT';
+          updateMetadata({imageAlt});
+          assert.equal(getMetaContent('property', 'og:image:alt'), imageAlt);
+          assert.equal(getMetaContent('property', 'og:url'), window.location.href);
+        });
+
+        test('update url', () => {
+          const url = 'SOME_URL';
+          updateMetadata({url});
+          assert.equal(getMetaContent('property', 'og:url'), url);
+        });
+
+        test('set arbitrary meta tag', () => {
+          const content = 'summary';
+          setMetaTag('name', 'twitter:card', content);
+          assert.equal(getMetaContent('name', 'twitter:card'), content);
+        });
+      });
+    </script>
+  </body>
+</html>

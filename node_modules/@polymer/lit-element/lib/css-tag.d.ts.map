@@ -1,0 +1,1 @@
+{"version":3,"file":"css-tag.d.ts","sourceRoot":"","sources":["../src/lib/css-tag.ts"],"names":[],"mappings":"AAAA;;;;;;;;;EASE;AAEF,eAAO,MAAM,2BAA2B,SACQ,CAAC;AAEjD,qBAAa,SAAS;IAEpB,WAAW,CAAC,EAAE,aAAa,GAAC,IAAI,CAAC;IAEjC,QAAQ,CAAC,OAAO,EAAE,MAAM,CAAC;gBAEb,OAAO,EAAE,MAAM;aAIvB,UAAU,EAAI,aAAa,GAAC,IAAI;CAarC;AAYD,eAAO,MAAM,GAAG,sEAMX,CAAC"}
