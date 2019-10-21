@@ -18,7 +18,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install and build
         run: |
-          npm ci          
+          npm ci
+          node cypress/scripts/xvfbargs          
           npm run lint
           npm run prod
 

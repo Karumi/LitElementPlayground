@@ -23,7 +23,6 @@
     "dev:sw": "npm run webpack-dev-server -- --env.mode development  --env.presets serviceworker",
     "format": "npm run format:prettier",
     "format:prettier": "prettier --write \"**/*.{js,json,md,ts}\"",
-    "install": "npm install && node cypress/scripts/xvfbargs",
     "lint": "npm run lint:eslint && npm run lint:lit",
     "lint:eslint": "eslint \"**/*.{js,ts}\"",
     "lint:lit": "lit-analyzer \"src/{views}/**/*.ts\" --strict --quiet",
