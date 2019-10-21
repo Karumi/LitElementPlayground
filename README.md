@@ -23,6 +23,28 @@ This application works offline then you need to run also the service worker addi
 
 Open `localhost:8080` page on your browser.
 
+## How to execute test
+
+```
+npm run prod
+npm start
+npm run cypress:run
+```
+
+This application uses Cypress to run the tests. Cypress is an E2E testing framework then we need to start a server which serves our HTML page with the host http://localhost:9000.
+
+Then to run Cypress you have two ways to do it, using cypress:run or cypress:open, the second one will display an application with all the tests files listing and you can run all of them or one by one with a beautiful interface where you can see the different states of the website during the tests.
+
+> Cypress use Chai and Mocha for assertion and test framework.
+
+## Generate new test snapshots
+
+```
+npm run cypress:update
+```
+
+You can modify the snapshots with new features running cypress:update, it will generate all new images for all tests unless you write in the test you want to change `it.only` in the test name.
+
 ## License
 
     Copyright 2019 Karumi

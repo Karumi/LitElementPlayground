@@ -15,8 +15,9 @@
   "main": "sw.js",
   "scripts": {
     "bundle-size-check": "bundlesize",
+    "cypress:ci": "cypress run --reporter cypress-image-snapshot/reporter --record",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run --reporter cypress-image-snapshot/reporter --record",
+    "cypress:run": "cypress run --reporter cypress-image-snapshot/reporter",
     "cypress:update": "cypress run --env updateSnapshots=true",
     "deploy": "gh-pages -d dist",
     "dev": "npm run webpack-dev-server -- --env.mode development",
@@ -28,8 +29,7 @@
     "lint:lit": "lit-analyzer \"src/{views}/**/*.ts\" --strict --quiet",
     "prod": "npm run webpack -- --env.mode production --env.presets serviceworker",
     "webpack": "webpack",
-    "webpack-dev-server": "webpack-dev-server --history-api-fallback",
-    "xvfb": "node ./cypress/scripts/xvfbargs.js"
+    "webpack-dev-server": "webpack-dev-server --history-api-fallback"
   },
   "keywords": [],
   "dependencies": {
