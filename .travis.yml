@@ -30,5 +30,5 @@ before_script:
 
 script:
   - npm run lint
-  - xvfb-run --server-args="-screen 0 1280x1024x8" make test
+  - xvfb-run --server-args="-screen 0 1281x1025x8" make test
   - npm run cypress:run

@@ -9,9 +9,6 @@ module.exports = (on, config) => {
       args.width = 1280;
       args.height = 1024;
       args.resizable = false;
-      args['width'] = 1280;
-      args['height'] = 1024;
-      args['resizable'] = false;
 
       return args;
     }
