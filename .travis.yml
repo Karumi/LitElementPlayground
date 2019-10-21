@@ -1,4 +1,7 @@
 language: node_js
+dist: xenial
+services:
+  - xvfb
 
 node_js:
   - 10.8
@@ -21,10 +24,10 @@ install:
   - npm ci
 
 before_script:
-  - echo $CYPRESS_RECORD_KEY
   - npm run prod
   - npm start -- --silent &
 
 script:
+  - npm run xvfb
   - npm run lint
   - npm run cypress:run
