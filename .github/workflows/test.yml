@@ -13,23 +13,24 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install npm dependencies
-        uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+        uses: actions/npm@master
         with:
           args: install
+
       - name: Execute Xvfb arguments
-        uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+        uses: actions/npm@master
         with:
-          args: xvfb
+          args: run xvfb
 
       - name: Execute Lint
-        uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+        uses: actions/npm@master
         with:
-          args: lint
+          args: run lint
 
       - name: Build
-        uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+        uses: actions/npm@master
         with:
-          args: prod
+          args: run prod
 
       - name: Run Tests
         uses: bartlett705/npm-cy@master
