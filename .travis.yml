@@ -24,11 +24,11 @@ install:
   - npm ci
 
 before_script:
+  - "Xvfb :1 -screen 0 '1281x1025x8'  &"
+  - 'export DISPLAY=:1'
   - npm run prod
   - npm start -- --silent &
 
 script:
-  - "Xvfb :1 -screen 0 '1281x1025x8'  &"
-  - 'export DISPLAY=:1'
   - npm run lint
   - npm run cypress:run
