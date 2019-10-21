@@ -28,6 +28,5 @@ before_script:
   - npm start -- --silent &
 
 script:
-  - npm run xvfb
   - npm run lint
   - npm run cypress:run
