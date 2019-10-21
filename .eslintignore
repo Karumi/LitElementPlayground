@@ -3,4 +3,3 @@ build-utils/
 webpack.config.js
 cypress/
 server.js
-node_modules/
