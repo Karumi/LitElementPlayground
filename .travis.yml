@@ -14,17 +14,17 @@ cache:
     - ~/.cache
 
 env:
-  - CYPRESS_video=false
-  - CYPRESS_RECORD_KEY=$RECORD_KEY
+  global:
+    - CYPRESS_video=false
 
 install:
   - npm ci
 
 before_script:
-  - echo $RECORD_KEY
+  - echo $CYPRESS_RECORD_KEY
   - npm run prod
   - npm start -- --silent &
 
 script:
   - npm run lint
-  - ./node_modules/.bin/cypress run --reporter cypress-image-snapshot/reporter --record -key RECORD_KEY
+  - npm run cypress:run
