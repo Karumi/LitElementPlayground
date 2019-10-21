@@ -25,6 +25,8 @@ install:
 
 before_script:
   - npm run prod
+  - "Xvfb :1 -screen 0 '1280x1024x8'  &"
+  - 'export DISPLAY=:1'
   - npm start -- --silent &
 
 script:
