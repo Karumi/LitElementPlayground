@@ -1,6 +1,10 @@
 import './styles.css';
 import './views/todo-view.js';
+import './views/header-view.js';
 import { Router } from '@vaadin/router';
+import { store } from './redux/store.js';
+
+window.store = store;
 
 window.addEventListener('load', () => {
   initRouter();

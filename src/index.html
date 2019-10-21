@@ -18,6 +18,7 @@
     <meta name="mobile-web-app-title" content="TutorialApp" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script>
       if (!window.customElements) {
         document.write('<!--');
@@ -25,39 +26,10 @@
     </script>
     <script src="./vendor/custom-elements-es5-adapter.js"></script>
     <!-- ! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
-    <style>
-      .navbar {
-        align-items: center;
-      }
-
-      a #navbar-item:hover {
-        background-color: transparent;
-      }
-    </style>
   </head>
 
   <body>
-    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="https://karumi.com">
-          <img src="./img/logo.png" alt="Karumi" width="112" height="28" />
-        </a>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item" href="/">
-            Todos
-          </a>
-          <a class="navbar-item" href="/stats">
-            Stats
-          </a>
-          <a class="navbar-item" href="https://github.com/karumi/LitElementPlayground" target="_blank">
-            <img src="./img/icons/GitHub-Mark-Light.png" alt="GitHub" width="28" height="28" />
-          </a>
-        </div>
-      </div>
-    </nav>
-
+    <header-view></header-view>
     <main></main>
     <script src="./vendor/webcomponents-loader.js"></script>
   </body>

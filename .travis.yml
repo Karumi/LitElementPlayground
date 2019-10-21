@@ -1,0 +1,34 @@
+language: node_js
+dist: xenial
+services:
+  - xvfb
+
+node_js:
+  - 10.8
+
+addons:
+  apt:
+    packages:
+      - libgconf-2-4
+
+cache:
+  directories:
+    - ~/.npm
+    - ~/.cache
+
+env:
+  global:
+    - CYPRESS_video=false
+
+install:
+  - npm ci
+
+before_script:
+  - "Xvfb :1 -screen 0 '1281x1025x8'  &"
+  - 'export DISPLAY=:1'
+  - npm run prod
+  - npm start -- --silent &
+
+script:
+  - npm run lint
+  - npm run cypress:ci

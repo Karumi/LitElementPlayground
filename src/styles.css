@@ -44,10 +44,6 @@ nav {
   padding: var(--spacing);
 }
 
-nav {
-  height: 3em;
-}
-
 header {
   background: var(--dark-color);
   color: var(--base-color);
