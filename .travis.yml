@@ -15,6 +15,7 @@ cache:
     - ~/.cache
 
 env:
+  - CYPRESS_video=false
   - CYPRESS_RECORD_KEY=$RECORD_KEY
 
 install:
