@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "todos",
+  "info": {
+    "name": "todo",
+    "description": "A task to do."
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "task": {
+      "maxLength": 144,
+      "required": true,
+      "type": "string"
+    },
+    "active": {
+      "required": true,
+      "type": "boolean"
+    },
+    "project": {
+      "model": "project",
+      "via": "todos"
+    }
+  }
+}
