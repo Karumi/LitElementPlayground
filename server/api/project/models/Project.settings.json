@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "project",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "required": true,
+      "maxLength": 100,
+      "type": "string"
+    },
+    "user": {
+      "model": "user",
+      "via": "projects",
+      "plugin": "users-permissions"
+    },
+    "todos": {
+      "collection": "todo",
+      "via": "project"
+    }
+  }
+}

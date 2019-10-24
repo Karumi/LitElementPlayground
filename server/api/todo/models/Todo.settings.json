@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "todo",
+  "info": {
+    "name": "todo",
+    "description": ""
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "task": {
+      "required": true,
+      "maxLength": 144,
+      "type": "string"
+    },
+    "completed": {
+      "required": true,
+      "type": "boolean"
+    },
+    "project": {
+      "model": "project",
+      "via": "todos"
+    }
+  }
+}
