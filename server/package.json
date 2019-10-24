@@ -11,26 +11,23 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "knex": "latest",
-    "sqlite3": "latest",
-    "strapi": "3.0.0-beta.17.3",
-    "strapi-admin": "3.0.0-beta.17.3",
-    "strapi-hook-bookshelf": "3.0.0-beta.17.3",
-    "strapi-hook-knex": "3.0.0-beta.17.3",
-    "strapi-plugin-content-manager": "3.0.0-beta.17.3",
-    "strapi-plugin-content-type-builder": "3.0.0-beta.17.3",
-    "strapi-plugin-documentation": "3.0.0-beta.17.3",
-    "strapi-plugin-email": "3.0.0-beta.17.3",
-    "strapi-plugin-settings-manager": "3.0.0-beta.17.3",
-    "strapi-plugin-upload": "3.0.0-beta.17.3",
-    "strapi-plugin-users-permissions": "3.0.0-beta.17.3",
-    "strapi-utils": "3.0.0-beta.17.3"
+    "strapi": "3.0.0-beta.17.4",
+    "strapi-admin": "3.0.0-beta.17.4",
+    "strapi-hook-mongoose": "3.0.0-beta.17.4",
+    "strapi-plugin-content-manager": "3.0.0-beta.17.4",
+    "strapi-plugin-content-type-builder": "3.0.0-beta.17.4",
+    "strapi-plugin-documentation": "3.0.0-beta.17.4",
+    "strapi-plugin-email": "3.0.0-beta.17.4",
+    "strapi-plugin-graphql": "3.0.0-beta.17.4",
+    "strapi-plugin-upload": "3.0.0-beta.17.4",
+    "strapi-plugin-users-permissions": "3.0.0-beta.17.4",
+    "strapi-utils": "3.0.0-beta.17.4"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "cd4df8a2-7a3a-4bb4-bd49-b3911232a1bb"
+    "uuid": "aa94341b-22e8-4858-8bd7-c841062b0772"
   },
   "engines": {
     "node": ">=10.0.0",

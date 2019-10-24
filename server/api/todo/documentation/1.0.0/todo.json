@@ -512,7 +512,7 @@
         "required": [
           "id",
           "task",
-          "active"
+          "completed"
         ],
         "properties": {
           "id": {
@@ -522,19 +522,22 @@
             "type": "string",
             "maxLength": 144
           },
-          "active": {
+          "completed": {
             "type": "boolean"
           },
           "project": {
             "required": [
               "id",
-              "Name"
+              "name"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "Name": {
+              "name": {
+                "type": "string"
+              },
+              "user": {
                 "type": "string"
               },
               "todos": {
@@ -542,9 +545,6 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "user": {
-                "type": "string"
               }
             }
           }
@@ -553,14 +553,14 @@
       "NewTodo": {
         "required": [
           "task",
-          "active"
+          "completed"
         ],
         "properties": {
           "task": {
             "type": "string",
             "maxLength": 144
           },
-          "active": {
+          "completed": {
             "type": "boolean"
           },
           "project": {

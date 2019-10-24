@@ -1,32 +1,27 @@
 {
   "connection": "default",
-  "collectionName": "projects",
+  "collectionName": "",
   "info": {
     "name": "project",
-    "description": "Project with list of todos"
+    "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": [
-      "created_at",
-      "updated_at"
-    ],
-    "comment": ""
+    "timestamps": true
   },
   "attributes": {
-    "Name": {
-      "maxLength": 100,
+    "name": {
       "required": true,
+      "maxLength": 100,
       "type": "string"
-    },
-    "todos": {
-      "collection": "todo",
-      "via": "project"
     },
     "user": {
       "model": "user",
       "via": "projects",
       "plugin": "users-permissions"
+    },
+    "todos": {
+      "collection": "todo",
+      "via": "project"
     }
   }
 }

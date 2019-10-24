@@ -1,22 +1,23 @@
 {
   "connection": "default",
-  "collectionName": "todos",
+  "collectionName": "todo",
   "info": {
     "name": "todo",
-    "description": "A task to do."
+    "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
-    "comment": ""
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
   },
   "attributes": {
     "task": {
-      "maxLength": 144,
       "required": true,
+      "maxLength": 144,
       "type": "string"
     },
-    "active": {
+    "completed": {
       "required": true,
       "type": "boolean"
     },
