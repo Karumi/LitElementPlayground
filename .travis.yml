@@ -20,6 +20,9 @@ env:
   global:
     - CYPRESS_video=false
 
+before_install:
+  - cd web/
+
 install:
   - npm ci
 
