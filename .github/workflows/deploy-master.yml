@@ -25,6 +25,6 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BASE_BRANCH: master # The branch the action should deploy from.
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: web/dist # The folder the action should deploy.
+          FOLDER: dist # The folder the action should deploy.
           CNAME: todo.karumi.app
           BUILD_SCRIPT: cd web && npm install && npm run prod # The build script the action should run prior to deploying.
