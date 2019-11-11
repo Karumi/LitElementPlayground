@@ -2,9 +2,14 @@ import {
   ADD_TODO,
   UPDATE_TODO_STATUS,
   UPDATE_FILTER,
-  CLEAR_COMPLETED
-} from './actions.js';
+  CLEAR_COMPLETED,
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGIN_ERROR,
+  LOGOUT
+} from '../actions';
 import { createSelector } from 'reselect';
+import { combineReducers } from 'redux';
 
 export const VisibilityFilters = {
   SHOW_ALL: 'All',
@@ -12,12 +17,12 @@ export const VisibilityFilters = {
   SHOW_COMPLETED: 'Completed'
 };
 
-const INITIAL_STATE = {
+const TODO_INITIAL_STATE = {
   todos: [],
   filter: VisibilityFilters.SHOW_ALL
 };
 
-export const reducer = (state = INITIAL_STATE, action) => {
+const workspace = (state = TODO_INITIAL_STATE, action) => {
   switch (action.type) {
     case ADD_TODO:
       return {
@@ -46,8 +51,8 @@ export const reducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-const getTodosSelector = state => state.todos;
-const getFilterSelector = state => state.filter;
+export const getTodosSelector = state => state.workspace.todos;
+export const getFilterSelector = state => state.workspace.filter;
 
 export const getVisibleTodosSelector = createSelector(
   getTodosSelector,
@@ -74,3 +79,55 @@ export const statsSelector = createSelector(
     };
   }
 );
+
+const login = () => {
+  const loading = (state = false, action) => {
+    switch (action.type) {
+      case LOGIN_REQUEST:
+        return true;
+      case LOGIN_SUCCESS:
+      case LOGIN_ERROR:
+        return false;
+      default:
+        return state;
+    }
+  };
+
+  const error = (state = false, action) => {
+    switch (action.type) {
+      case LOGIN_ERROR:
+        return true;
+      case LOGIN_REQUEST:
+      case LOGIN_SUCCESS:
+        return false;
+      default:
+        return state;
+    }
+  };
+
+  const username = (state = null, action) => {
+    switch (action.type) {
+      case LOGIN_SUCCESS:
+        return action.username;
+      case LOGOUT:
+      case LOGIN_ERROR:
+      case LOGIN_REQUEST:
+        return null;
+      default:
+        return state;
+    }
+  };
+
+  return combineReducers({
+    username,
+    error,
+    loading
+  });
+};
+
+export const loginSelector = state => state.login;
+
+export const reducer = combineReducers({
+  login: login(),
+  workspace
+});

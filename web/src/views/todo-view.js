@@ -6,8 +6,9 @@ import '@vaadin/vaadin-radio-button/vaadin-radio-button';
 import '@vaadin/vaadin-radio-button/vaadin-radio-group';
 import {
   VisibilityFilters,
-  getVisibleTodosSelector
-} from '../redux/reducer.js';
+  getVisibleTodosSelector,
+  getFilterSelector
+} from '../redux/reducers';
 import { store } from '../redux/store.js';
 import { connect } from 'pwa-helpers';
 import {
@@ -15,7 +16,7 @@ import {
   updateTodoStatus,
   updateFilter,
   clearCompleted
-} from '../redux/actions.js';
+} from '../redux/actions';
 import { BaseView } from './base-view.js';
 
 class TodoView extends connect(store)(BaseView) {
@@ -29,7 +30,7 @@ class TodoView extends connect(store)(BaseView) {
 
   stateChanged(state) {
     this.todos = getVisibleTodosSelector(state);
-    this.filter = state.filter;
+    this.filter = getFilterSelector(state);
   }
 
   render() {
@@ -55,54 +56,57 @@ class TodoView extends connect(store)(BaseView) {
           margin-top: calc(4 * var(--spacing));
         }
       </style>
-      <div class="input-layout" @keyup="${this.shortcutListener}">
-        <vaadin-text-field
-          placeholder="Task"
-          value="${this.task || ''}"
-          @change="${this.updateTask}"
+      <section class="section">
+        <div class="input-layout" @keyup="${this.shortcutListener}">
+          <vaadin-text-field
+            placeholder="Task"
+            value="${this.task || ''}"
+            @change="${this.updateTask}"
+          >
+          </vaadin-text-field>
+          <vaadin-button theme="primary" @click="${this.addTodo}">
+            Add todo
+          </vaadin-button>
+        </div>
+
+        <div class="todos-list">
+          ${this.todos.map(
+            todo => html`
+              <div class="todo-item">
+                <vaadin-checkbox
+                  ?checked="${todo.complete}"
+                  @change="${e =>
+                    this.updateTodosStatus(todo, e.target.checked)}"
+                >
+                  ${todo.task}
+                </vaadin-checkbox>
+              </div>
+            `
+          )}
+        </div>
+
+        <vaadin-radio-group
+          class="vibility-filters"
+          value="${this.filter}"
+          @value-changed="${this.filterChanged}"
         >
-        </vaadin-text-field>
-        <vaadin-button theme="primary" @click="${this.addTodo}">
-          Add todo
-        </vaadin-button>
-      </div>
-
-      <div class="todos-list">
-        ${this.todos.map(
-          todo => html`
-            <div class="todo-item">
-              <vaadin-checkbox
-                ?checked="${todo.complete}"
-                @change="${e => this.updateTodosStatus(todo, e.target.checked)}"
+          ${Object.values(VisibilityFilters).map(
+            filter => html`
+              <vaadin-radio-button value="${filter}"
+                >${filter}</vaadin-radio-button
               >
-                ${todo.task}
-              </vaadin-checkbox>
-            </div>
-          `
-        )}
-      </div>
+            `
+          )}
+        </vaadin-radio-group>
 
-      <vaadin-radio-group
-        class="vibility-filters"
-        value="${this.filter}"
-        @value-changed="${this.filterChanged}"
-      >
-        ${Object.values(VisibilityFilters).map(
-          filter => html`
-            <vaadin-radio-button value="${filter}"
-              >${filter}</vaadin-radio-button
-            >
-          `
-        )}
-      </vaadin-radio-group>
-
-      <vaadin-button
-        id="clear-completed"
-        theme="secondary"
-        @click="${this.clearCompleted}"
-      >
-        Clear completed
-      </vaadin-button>
+        <vaadin-button
+          id="clear-completed"
+          theme="secondary"
+          @click="${this.clearCompleted}"
+        >
+          Clear completed
+        </vaadin-button>
+      </section>
     `;
   }
 
