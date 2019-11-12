@@ -34,18 +34,13 @@ describe('Todo view', () => {
     cy.contains(firstTask).should('not.have.attr', 'checked');
     cy.contains(secondTask).should('not.have.attr', 'checked');
 
-    cy.window()
-      .its('store')
-      .invoke('getState')
-      .should(state => {
-        const firstTodo = state.todos[0];
-        expect(firstTodo.task).to.equal(firstTask);
-        expect(firstTodo.complete).to.equal(false);
-
-        const secondTodo = state.todos[1];
-        expect(secondTodo.task).to.equal(secondTask);
-        expect(secondTodo.complete).to.equal(false);
-      });
+    const taskNames = [firstTask, secondTask];
+    cy.getTodos()
+        .should('have.length', 2)
+        .each((todo, index) => {        
+            expect(todo.task).to.equal(taskNames[index]);
+            expect(todo.complete).to.equal(false);
+         });
   });
 
   it('show all todos', () => {
@@ -114,7 +109,7 @@ describe('Todo view', () => {
 
     cy.get('#clear-completed').click();
     cy.get('completed task', { timeout: 0 }).should('not.exist');
-    cy.stateEquals({
+    cy.stateEqualsTodos({
       todos: [activeTask],
       filter: 'All'
     });

@@ -6,6 +6,7 @@ import { loginUser } from '../redux/actions';
 import { connect } from 'pwa-helpers';
 import { store } from '../redux/store.js';
 import { loginSelector } from '../redux/reducers';
+import { Router } from '@vaadin/router';
 
 class LoginView extends connect(store)(BaseView) {
   static get properties() {
@@ -59,6 +60,7 @@ class LoginView extends connect(store)(BaseView) {
   redirectHome(login) {
     if (login.username && !login.error && !login.loading) {      
       window.location.href = '/';
+      //Router.go("/")
     }
   }
 

@@ -4,6 +4,7 @@ import { connect } from 'pwa-helpers';
 import { store } from '../redux/store.js';
 import { logout } from '../redux/actions';
 import { loginSelector } from '../redux/reducers';
+import { Router } from '@vaadin/router';
 
 class HeaderView extends connect(store)(BaseView) {
   static get properties() {
@@ -28,7 +29,8 @@ class HeaderView extends connect(store)(BaseView) {
 
   logOutClick() {
     store.dispatch(logout());    
-    window.location.href = '/login';
+    //window.location.href = '/login';
+    Router.go("/login");
   }
 
   getUserDropdown() {
