@@ -31,7 +31,7 @@ npm start
 npm run cypress:run
 ```
 
-This application uses Cypress to run the tests. Cypress is an E2E testing framework then we need to start a server which serves our HTML page with the host http://localhost:9000.
+This application uses Cypress to run the tests. Cypress is an E2E testing framework then we need to start a server which serves our HTML page with the host http://localhost:9000 with `node server`.
 
 Then to run Cypress you have two ways to do it, using cypress:run or cypress:open, the second one will display an application with all the tests files listing and you can run all of them or one by one with a beautiful interface where you can see the different states of the website during the tests.
 

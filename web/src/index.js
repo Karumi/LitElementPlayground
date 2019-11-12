@@ -1,6 +1,7 @@
 import './styles.css';
 import './views/todo-view.js';
 import './views/header-view.js';
+import './views/login-view.js';
 import { Router } from '@vaadin/router';
 import { store } from './redux/store.js';
 
@@ -21,7 +22,12 @@ function initRouter() {
     {
       path: '/stats',
       component: 'stats-view',
-      action: () => import(/* webpackChunkName: "stats" */ './views/stats-view') //
+      action: () => import(/* webpackChunkName: "stats" */ './views/stats-view')
+    },
+    {
+      path: '/login',
+      component: 'login-view',
+      action: () => import(/* webpackChunkName: "login" */ './views/login-view')
     },
     {
       path: '(.*)',

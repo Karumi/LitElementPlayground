@@ -17,10 +17,11 @@ addMatchImageSnapshotCommand({
   capture: 'viewport'
 });
 
-Cypress.Commands.add('stateEquals', expected => {
+Cypress.Commands.add('stateEqualsTodos', expected => {
   cy.window()
     .its('store')
     .invoke('getState')
+    .its('workspace')
     .should('deep.equal', expected);
 });
 
@@ -29,7 +30,7 @@ Cypress.Commands.add('getTodos', () => {
     .window()
     .its('store')
     .invoke('getState')
-    .its('todos');
+    .its('workspace.todos');
 });
 
 Cypress.Commands.add('addTodo', todo => {

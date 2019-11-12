@@ -1,7 +1,7 @@
 import { BaseView } from './base-view.js';
 import { connect } from 'pwa-helpers';
 import { store } from '../redux/store.js';
-import { statsSelector } from '../redux/reducer.js';
+import { statsSelector, getTodosSelector } from '../redux/reducers';
 import { html } from '@polymer/lit-element';
 import Chart from 'chart.js';
 
@@ -31,7 +31,7 @@ class StatsView extends connect(store)(BaseView) {
       labels: ['Completed', 'Active']
     };
 
-    this.hasTodos = state.todos.length > 0;
+    this.hasTodos = getTodosSelector(state).length > 0;
   }
 
   render() {
@@ -41,8 +41,9 @@ class StatsView extends connect(store)(BaseView) {
           display: block;
         }
       </style>
-
-      ${this.getChart()}
+      <section class="section">
+        ${this.getChart()}
+      </section>
     `;
   }
 

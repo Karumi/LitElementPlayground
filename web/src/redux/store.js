@@ -1,5 +1,6 @@
-import { createStore } from 'redux';
-import { reducer } from './reducer.js';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { reducer } from './reducers';
+import thunk from 'redux-thunk';
 
 const STORAGE_KEY = '__todo_app__';
 
@@ -12,10 +13,12 @@ const loadState = () => {
   return json ? JSON.parse(json) : undefined;
 };
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 export const store = createStore(
   reducer,
   loadState(),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 store.subscribe(() => {
