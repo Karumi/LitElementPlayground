@@ -13,7 +13,7 @@ module.exports = () => ({
   plugins: [
     // Copy empty ServiceWorker so install doesn't blow up
     new CopyWebpackPlugin(['src/sw.js']),
-    new webpack.DefinePlugin({      
+    new webpack.DefinePlugin({
       'process.env.API_URL': JSON.stringify('http://localhost:1337')
     })
   ],

@@ -23,6 +23,7 @@ export const loginUser = (username, password) => dispatch => {
       });
     })
     .catch(error => {
+      console.log(error);
       dispatch({
         type: LOGIN_ERROR
       });

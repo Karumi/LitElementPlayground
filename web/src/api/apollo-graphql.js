@@ -1,6 +1,6 @@
 import ApolloClient, { gql } from 'apollo-boost';
 import { connectApollo } from './apollo-mixing';
-import {API_URL} from './index'
+import { API_URL } from './index';
 
 const client = new ApolloClient({
   uri: `${API_URL}/graphql`,

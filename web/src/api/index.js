@@ -18,6 +18,7 @@ export const loginRequest = (user, password) => {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
     body: formData
-  }).then(handleErrors)
+  })
+    .then(handleErrors)
     .then(response => response.json());
 };

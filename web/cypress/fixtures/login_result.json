@@ -1,14 +1,14 @@
 {
   "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzA1NWQ3YWE3ZTIwODhjMWUyNWQ2MyIsImlhdCI6MTU3MzQ3NDYzMiwiZXhwIjoxNTc2MDY2NjMyfQ.NdL160PnCgTCdS3wU6a4IjVNHWR2lGdujyuuDQM4LGw",
   "user": {
-      "confirmed": true,
-      "blocked": false,
-      "_id": "5dc055d7aa7e2088c1e25d63",
-      "username": "toni",
-      "email": "toni@karumi.com",
-      "provider": "local",
-      "createdAt": "2019-11-04T16:46:15.562Z",
-      "updatedAt": "2019-11-04T16:46:15.576Z",     
-      "id": "5dc055d7aa7e2088c1e25d63"
+    "confirmed": true,
+    "blocked": false,
+    "_id": "5dc055d7aa7e2088c1e25d63",
+    "username": "toni",
+    "email": "toni@karumi.com",
+    "provider": "local",
+    "createdAt": "2019-11-04T16:46:15.562Z",
+    "updatedAt": "2019-11-04T16:46:15.576Z",
+    "id": "5dc055d7aa7e2088c1e25d63"
   }
 }

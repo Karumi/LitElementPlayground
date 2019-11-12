@@ -1,7 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
-module.exports = (env) => ({
+module.exports = env => ({
   module: {
     rules: [
       {
@@ -12,8 +12,10 @@ module.exports = (env) => ({
   },
   plugins: [
     new MiniCssExtractPlugin(),
-    new webpack.DefinePlugin({      
-      'process.env.API_URL': JSON.stringify(process.env.API_URL || "http://localhost:9000")
+    new webpack.DefinePlugin({
+      'process.env.API_URL': JSON.stringify(
+        process.env.API_URL || 'http://localhost:9000'
+      )
     })
   ]
 });

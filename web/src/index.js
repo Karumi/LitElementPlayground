@@ -28,7 +28,7 @@ function initRouter() {
       path: '/login',
       component: 'login-view',
       action: () => import(/* webpackChunkName: "login" */ './views/login-view')
-    },   
+    },
     {
       path: '(.*)',
       component: 'not-found-view',

@@ -36,11 +36,11 @@ describe('Todo view', () => {
 
     const taskNames = [firstTask, secondTask];
     cy.getTodos()
-        .should('have.length', 2)
-        .each((todo, index) => {        
-            expect(todo.task).to.equal(taskNames[index]);
-            expect(todo.complete).to.equal(false);
-         });
+      .should('have.length', 2)
+      .each((todo, index) => {
+        expect(todo.task).to.equal(taskNames[index]);
+        expect(todo.complete).to.equal(false);
+      });
   });
 
   it('show all todos', () => {
